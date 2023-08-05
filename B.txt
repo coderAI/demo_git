@@ -1,3 +1,965 @@
-http://doc.edu.vn/tai-lieu/khoa-luan-dich-vu-cang-bien-va-mo-hinh-quan-ly-cang-cua-singapore-33071/
-
-http://www.academia.edu/11332718/D%E1%BB%8Bch_v%E1%BB%A5_c%E1%BA%A3ng_bi%E1%BB%83n_v%C3%A0_ph%C3%A1t_tri%E1%BB%83n_d%E1%BB%8Bch_v%E1%BB%A5_c%E1%BA%A3ng_bi%E1%BB%83n_%E1%BB%9F_Vi%E1%BB%87t_Nam_%C4%91%C3%A1p_%E1%BB%A9ng_y%C3%AAu_c%E1%BA%ADu_h%E1%BB%99i_nh%E1%BA%ADp_kinh_t%E1%BA%BF_qu%E1%BB%91c_t%E1%BA%BF
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Bài tập 1 - Ôn tập Python\n",
+    "\n",
+    "*(Thống kê máy tính và ứng dụng - ĐTTX Kì 1 2023-2024)*"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "MSSV: <...>\n",
+    "\n",
+    "Họ và tên: <...>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Nạp dữ liệu\n",
+    "\n",
+    "Toàn bộ nội dung Truyện Kiều đã được \"chuẩn hóa\" và để trong tập tin `TruyenKieu.txt`, mỗi câu trên một dòng.\n",
+    "\n",
+    "Vì ngữ liệu (dữ liệu văn bản thường được gọi là ngữ liệu) khá nhỏ nên ta sẽ nạp toàn bộ vào biến `txt` và sau đó xử lý biến này."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "with open(\"D:\\truyen kieu\\TruyenKieu.txt\", encoding=\"utf-8\") as f:\n",
+    "    txt = f.read()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "txt[:200]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "200 kí tự đầu tiên"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'trăm năm trong cõi người ta\\nchữ tài chữ mệnh khéo là ghét nhau\\ntrải qua một cuộc bể dâu\\nnhững điều trông thấy mà đau đớn lòng\\nlạ gì bỉ sắc tư phong\\ntrời xanh quen thói má hồng đánh ghen\\ncảo thơm lần g'"
+      ]
+     },
+     "execution_count": 2,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "txt[:200]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "200 kí tự cuối cùng"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'chữ tai một vần\\nđã mang lấy nghiệp vào thân\\ncũng đừng trách lẫn trời gần trời xa\\nthiện căn ở tại lòng ta\\nchữ tâm kia mới bằng ba chữ tài\\nlời quê chắp nhặt dông dài\\nmua vui cũng được một vài trống canh'"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "txt[-200:]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Nhận xét là việc xuống dòng được mô tả bởi kí tự `newline (\\n)`."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Yêu cầu\n",
+    "\n",
+    "Sinh viên viết code Python để thực hiện các yêu cầu sau"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 1 (0.5 đ) - Đếm số lượng câu\n",
+    "\n",
+    "*Đáp án:* 3254 (câu)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['trăm năm trong cõi người ta',\n",
+       " 'chữ tài chữ mệnh khéo là ghét nhau',\n",
+       " 'trải qua một cuộc bể dâu']"
+      ]
+     },
+     "execution_count": 4,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Tách câu\n",
+    "sentences = txt.split(\"\\n\")\n",
+    "sentences[:3]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 2 (0.5 đ) - Truy vấn câu (1)\n",
+    "\n",
+    "Cho người dùng chọn số thứ tự `k` và xuất ra câu thứ `k` (tính từ 1).\n",
+    "\n",
+    "*Ví dụ 1:* \n",
+    "  - Input: `k = 15`\n",
+    "\n",
+    "  - Output: 15. đầu lòng hai ả tố nga\n",
+    "  \n",
+    "*Ví dụ 2:* \n",
+    "  - Input: `k = 4000`\n",
+    "  \n",
+    "  - Output: Số thứ tự không hợp lệ"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 3 (0.5 đ) - Truy vấn câu (2)\n",
+    "\n",
+    "Cho người dùng chọn số thứ tự `k` và số lượng câu `l`, xuất ra `l` câu kể từ câu thứ `k` (tính từ 1).\n",
+    "\n",
+    "*Ví dụ 1:* \n",
+    "  - Input: `k = 15, l = 4`\n",
+    "\n",
+    "  - Output: \n",
+    "           \n",
+    "           15. đầu lòng hai ả tố nga\n",
+    "           \n",
+    "           16. thúy kiều là chị em là thúy vân\n",
+    "           \n",
+    "           17. mai cốt cách tuyết tinh thần\n",
+    "           \n",
+    "           18. mỗi người một vẻ mười phân vẹn mười \n",
+    "  \n",
+    "*Ví dụ 2:* \n",
+    "  - Input: `k = 3253, l = 4`\n",
+    "  \n",
+    "  - Output:\n",
+    "           \n",
+    "           3253. lời quê chắp nhặt dông dài\n",
+    "           \n",
+    "           3254. mua vui cũng được một vài trống canh"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 4 (0.5 đ) - Truy vấn câu (3)\n",
+    "\n",
+    "Tìm các câu có cụm từ được cho (không phân biệt hoa thường)\n",
+    "\n",
+    "*Ví dụ:* \n",
+    "  - Input: `Thúy Kiều`\n",
+    "\n",
+    "  - Output: \n",
+    "           \n",
+    "           16. thúy kiều là chị em là thúy vân\n",
+    "           \n",
+    "           2659. thúy kiều sắc sảo khôn ngoan\n",
+    "           \n",
+    "           2681. xét trong tội nghiệp thúy kiều\n",
+    "           \n",
+    "           2891. thúy kiều tài sắc ai bì"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 5 (0.5 đ) - Đếm số lần xuất hiện cụm từ\n",
+    "\n",
+    "Đếm số lần xuất hiện cụm từ được cho (không phân biệt hoa thường)\n",
+    "\n",
+    "*Ví dụ 1:* \n",
+    "  - Input: `Thúy Kiều`\n",
+    "\n",
+    "  - Output: 4 (lần)\n",
+    "  \n",
+    "*Ví dụ 2:* \n",
+    "  - Input: `Kiều`\n",
+    "  \n",
+    "  - Output: 29 (lần)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 6 (0.5 đ) - Đếm số lượng từ\n",
+    "\n",
+    "*Lưu ý*: khái niệm **từ (word)** ở đây có nghĩa là tiếng trong Tiếng Việt. Ví dụ: Thúy Kiều gồm 2 từ là Thúy và Kiều. (Khái niệm từ của Tiếng Việt, bao gồm từ ghép như từ Thúy-Kiều, cần được xử lý phức tạp hơn.)\n",
+    "\n",
+    "*Đáp án:* 22778 (từ)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['trăm', 'năm', 'trong', 'cõi', 'người', 'ta', 'chữ', 'tài', 'chữ', 'mệnh']"
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# Tách từ\n",
+    "words = txt.split()\n",
+    "words[:10]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 7 (0.5 đ) - Đếm số lượng mặt từ\n",
+    "\n",
+    "*Lưu ý*: khái niệm **mặt từ** chỉ sự xuất hiện của từ mà không kể số lần xuất hiện. Ví dụ: câu \"học sinh học sinh học\" thì có 2 mặt từ là \"học\" và \"sinh\". (Ngược lại, câu đó có 5 từ.)\n",
+    "\n",
+    "*Đáp án:* 2383 (mặt từ)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 8 (0.5 đ) - Thống kê số lần xuất hiện (tần số) từ (1)\n",
+    "\n",
+    "Liệt kê danh sách `k` từ xuất hiện nhiều nhất theo thứ tự giảm dần."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 9 (0.5 đ) - Thống kê tần số từ (2)\n",
+    "\n",
+    "Liệt kê danh sách `k` từ xuất hiện ít nhất theo thứ tự tăng dần."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 10 (0.5 đ) - Thống kê tần số kí tự (1)\n",
+    "\n",
+    "Liệt kê tất cả các chữ cái và tần số, tần suất theo thứ tự chữ cái trong bảng chữ cái Tiếng Việt."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 11 (0.5 đ) - Thống kê tần số kí tự (2)\n",
+    "\n",
+    "Liệt kê tất cả các chữ cái và tần số, tần suất theo thứ tự tần số giảm dần"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 12 (0.5 đ) - Thống kê tần số kí tự (3)\n",
+    "\n",
+    "Liệt kê tất cả các nguyên âm Tiếng Việt và tần số, tần suất theo thứ tự tần số giảm dần"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 13 (1 đ) - Thống kê tần số bigram word\n",
+    "\n",
+    "Một **n-gram word** là một dãy liên tiếp gồm *n* từ. Một từ có thể xem là 1-gram và được gọi là **unigram**. 2-gram được gọi là **bigram**, 3-gram được gọi là **trigram**. \n",
+    "\n",
+    "*Ví dụ:* câu \"học sinh học sinh học\" thì có các bigram lần lượt là: học_sinh, sinh_học, học_sinh, sinh_học. Bigram học_sinh có tần số là 2, bigram sinh_học cũng có tần số là 2.\n",
+    "\n",
+    "Liệt kê danh sách `k` bigram xuất hiện nhiều nhất theo thứ tự giảm dần."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Làm thơ tự động\n",
+    "\n",
+    "Phần này dùng **\"mô hình bigram\"** để sinh thơ đơn giản từ ngữ liệu Truyện Kiều trên."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Thể thơ lục bát** gồm các cặp câu ghép lại. Mỗi cặp gồm một **câu lục** 6 tiếng và một **câu bát** 8 tiếng. Do đó, ta sẽ tách Truyện Kiều ra các cặp câu, mỗi câu ta cũng tách các từ. Hơn nữa, để thuận tiện cho việc phân tích ta thêm các kí hiệu `<s>` vào đầu câu lục, `<m>` kết thúc câu lục (cũng là bắt đầu câu bát) và `<e>` kết thúc câu bát."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "pair_words = [[\"<s>\"] + s1.split() + [\"<m>\"] + s2.split() + [\"<e>\"] \n",
+    "              for s1, s2 in zip(sentences[::2], sentences[1::2])]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['<s>',\n",
+       " 'trăm',\n",
+       " 'năm',\n",
+       " 'trong',\n",
+       " 'cõi',\n",
+       " 'người',\n",
+       " 'ta',\n",
+       " '<m>',\n",
+       " 'chữ',\n",
+       " 'tài',\n",
+       " 'chữ',\n",
+       " 'mệnh',\n",
+       " 'khéo',\n",
+       " 'là',\n",
+       " 'ghét',\n",
+       " 'nhau',\n",
+       " '<e>']"
+      ]
+     },
+     "execution_count": 7,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pair_words[0]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "['<s>',\n",
+       " 'lời',\n",
+       " 'quê',\n",
+       " 'chắp',\n",
+       " 'nhặt',\n",
+       " 'dông',\n",
+       " 'dài',\n",
+       " '<m>',\n",
+       " 'mua',\n",
+       " 'vui',\n",
+       " 'cũng',\n",
+       " 'được',\n",
+       " 'một',\n",
+       " 'vài',\n",
+       " 'trống',\n",
+       " 'canh',\n",
+       " '<e>']"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "pair_words[-1]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Mô hình bigram (cặp từ) dùng thông tin bigram để sinh các từ. Cụ thể, để sinh từ sau từ `w`, ta dùng các bigram bắt đầu là `w` và để sinh từ trước từ `w`, ta dùng các bigram kết thúc là `w`. Việc lựa chọn từ thường dựa trên tần số từ. Do đó ta xây dựng các từ điển (`dict`) mô tả các từ theo sau và đằng trước một từ (cùng tần số tương ứng)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "from collections import Counter\n",
+    "\n",
+    "unique_words = list(set(words))\n",
+    "next_dict = {w: Counter() for w in unique_words + [\"<s>\", \"<m>\", \"<e>\"]}\n",
+    "prev_dict = {w: Counter() for w in unique_words + [\"<s>\", \"<m>\", \"<e>\"]}\n",
+    "\n",
+    "for pw in pair_words:\n",
+    "    for w1, w2 in zip(pw[:-1], pw[1:]):\n",
+    "        next_dict[w1].update([w2])\n",
+    "        prev_dict[w2].update([w1])"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Chẳng hạn, 10 từ bắt đầu câu lục (theo sau từ `<s>`) phổ biến nhất là"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[('nàng', 56),\n",
+       " ('một', 39),\n",
+       " ('rằng', 29),\n",
+       " ('sinh', 23),\n",
+       " ('đã', 22),\n",
+       " ('nghĩ', 19),\n",
+       " ('những', 17),\n",
+       " ('người', 15),\n",
+       " ('khi', 15),\n",
+       " ('có', 14)]"
+      ]
+     },
+     "execution_count": 10,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "next_dict[\"<s>\"].most_common(10)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Hay, 10 từ phổ biến nhất theo sau từ thúy là"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[('kiều', 4), ('vân', 4), ('nét', 1), ('chia', 1), ('dò', 1)]"
+      ]
+     },
+     "execution_count": 11,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "next_dict[\"thúy\"].most_common(10)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "10 từ kết thúc câu bát (đằng trước từ `<e>`) phổ biến nhất là"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[('ai', 29),\n",
+       " ('đây', 29),\n",
+       " ('thôi', 24),\n",
+       " ('sau', 23),\n",
+       " ('xa', 23),\n",
+       " ('sao', 23),\n",
+       " ('ra', 22),\n",
+       " ('tình', 22),\n",
+       " ('hoa', 21),\n",
+       " ('đâu', 20)]"
+      ]
+     },
+     "execution_count": 12,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "prev_dict[\"<e>\"].most_common(10)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "10 từ phổ biến nhất đằng trước từ kiều là"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "[('<s>', 7),\n",
+       " ('thúy', 4),\n",
+       " ('tiếng', 3),\n",
+       " ('nàng', 3),\n",
+       " ('hai', 2),\n",
+       " ('lam', 2),\n",
+       " ('mã', 2),\n",
+       " ('nghe', 1),\n",
+       " ('tiểu', 1),\n",
+       " ('giọng', 1)]"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "prev_dict[\"kiều\"].most_common(10)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Liệt kê 10 từ kết thúc câu lục phổ biến nhất (các từ trước `<m>`)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# write your code here"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Liệt kê 10 từ bắt đầu \"câu bát\" phổ biến nhất (các từ sau `<m>`)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# write your code here"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Sau đây ta sinh một câu thơ bằng chiến lược đơn giản nhất: nửa đầu câu ta dùng tần số từ đằng sau và nửa cuối câu ta dùng tần số từ đằng trước để sinh ngẫu nhiên các từ một cách tuần tự.\n",
+    "\n",
+    "Để sinh cặp câu thơ lục bát, ta sinh câu lục (bắt đầu là `<s>`, kết thúc là `<m>`) và câu bát (bắt đầu là `<m>`, kết thúc là `<e>`) rồi ghép lại."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import random\n",
+    "\n",
+    "def gen_word(word_dict, w):\n",
+    "    if w not in word_dict or not word_dict[w]:\n",
+    "        return random.choice(words)\n",
+    "    return random.choices(list(word_dict[w].keys()), weights=word_dict[w].values())[0]\n",
+    "\n",
+    "def gen_sentence(start_word, end_word, num):\n",
+    "    start_part, word = [start_word], start_word\n",
+    "    for i in range(num // 2):\n",
+    "        word = gen_word(next_dict, word)\n",
+    "        start_part.append(word)\n",
+    "    end_part, word = [end_word], end_word\n",
+    "    for i in range(num - num // 2):\n",
+    "        word = gen_word(prev_dict, word)\n",
+    "        end_part.append(word)\n",
+    "    return start_part + list(reversed(end_part))\n",
+    "\n",
+    "def gen_pair_sentence():\n",
+    "    sen_6 = gen_sentence(\"<s>\", \"<m>\", 6)\n",
+    "    sen_8 = gen_sentence(\"<m>\", \"<e>\", 8)\n",
+    "    return \" \".join(sen_6[1:-1]) + \"\\n\" + \" \".join(sen_8[1:-1])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "phong cảnh giang <m> một hao\n",
+      "những thói má liễu sắc <s> vội vàng\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(gen_pair_sentence())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "*Thơ con cóc ghẻ!*"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "Ta cải tiến thêm một chút với các lưu ý:\n",
+    "\n",
+    "1. Các từ cần \"liên kết trơn tru hơn\".\n",
+    "\n",
+    "1. Không có các từ đặc biệt `<s>`, `<m>`, `<e>` giữa câu.\n",
+    "\n",
+    "1. Từ cuối của câu bát phải vần với từ thứ 6 của câu lục."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "rhyme_dict = {w: Counter() for w in unique_words}\n",
+    "for pw in pair_words:\n",
+    "    rhyme_dict[pw[6]].update([pw[13]])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Counter({'là': 7, 'ma': 1, 'nhà': 2, 'đà': 1, 'hoa': 2, 'ra': 1, 'ba': 1})"
+      ]
+     },
+     "execution_count": 19,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "rhyme_dict[\"ta\"]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "Counter()"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "rhyme_dict[\"một\"]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def gen_sentence2(start_word, end_word, num):\n",
+    "    while True:\n",
+    "        start_part, word = [start_word], start_word\n",
+    "        for i in range(num // 2):\n",
+    "            word = gen_word(next_dict, word)\n",
+    "            start_part.append(word)\n",
+    "        end_part, word = [end_word], end_word\n",
+    "        for i in range(num - num // 2):\n",
+    "            word = gen_word(prev_dict, word)\n",
+    "            end_part.append(word)\n",
+    "        if end_part[-1] in next_dict[start_part[-1]]:\n",
+    "            return start_part + list(reversed(end_part))\n",
+    "\n",
+    "def gen_pair_sentence2():\n",
+    "    while True:\n",
+    "        sen_6 = gen_sentence2(\"<s>\", \"<m>\", 6)[1:-1]\n",
+    "        sen_8_rhyme_word = gen_word(rhyme_dict, sen_6[-1])\n",
+    "        sen_8_part1 = gen_sentence2(\"<m>\", sen_8_rhyme_word, 5)[1:]\n",
+    "        sen_8_part2 = gen_sentence2(sen_8_rhyme_word, \"<e>\", 2)[1:-1]\n",
+    "        sen_8 = sen_8_part1 + sen_8_part2\n",
+    "        if not any(k in sen_6 or k in sen_8 for k in [\"<s>\", \"<m>\", \"<e>\"]):\n",
+    "            return \" \".join(sen_6) + \"\\n\" + \" \".join(sen_8)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "ôi nói thương nỗi quê người\n",
+      "lọ người trông thấy một vài lời non\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(gen_pair_sentence2())"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "*Thơ con cóc!*"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "### Câu 14 (3 đ)\n",
+    "\n",
+    "Thử sửa code để sinh cặp lục bát theo các ý sau:\n",
+    "\n",
+    "1. Cho trước từ đầu câu lục\n",
+    "\n",
+    "1. Cho trước từ cuối câu lục\n",
+    "\n",
+    "1. Cho trước từ đầu câu bát\n",
+    "\n",
+    "1. Cho trước từ thứ 6 câu bát\n",
+    "\n",
+    "1. Cho trước từ cuối câu bát\n",
+    "\n",
+    "1. Kết hợp các cách trên\n",
+    "\n",
+    "1. Có chứa cụm từ nào đó\n",
+    "\n",
+    "1. ..."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": None,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.11"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
